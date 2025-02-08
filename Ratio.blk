@@ -1,0 +1,352 @@
+<xml xmlns="https://developers.google.com/blockly/xml">
+<block type="procedures_defnoreturn" id="0KGIKexU*j)M4GAo4bCb" x="704" y="-277">
+<field name="NAME">Init Motors/Servos</field>
+<comment pinned="false" h="80" w="160">Describe this function...</comment>
+<statement name="STACK">
+<block type="dcMotor_setProperty_Number" id="!9/nU(]46^LA)jj4w=sO">
+<field name="IDENTIFIER">tiltMAsDcMotor</field>
+<field name="PROP">TargetPosition</field>
+<data>{"IDENTIFIER":"tiltM"}</data>
+<value name="VALUE">
+<shadow type="math_number" id="wleKFklsb}XL{IF.Dc^c">
+<field name="NUM">1</field>
+</shadow>
+<block type="dcMotor_getProperty_Number" id="sX.FRU~b)m{XOt4hCMy/">
+<field name="IDENTIFIER">tiltMAsDcMotor</field>
+<field name="PROP">CurrentPosition</field>
+<data>{"IDENTIFIER":"tiltM"}</data>
+</block>
+</value>
+<next>
+<block type="dcMotor_setProperty_RunMode" id="Jh9fV$Vc{Xp[3;-x6{jg">
+<field name="IDENTIFIER">tiltMAsDcMotor</field>
+<field name="PROP">Mode</field>
+<data>{"IDENTIFIER":"tiltM"}</data>
+<value name="VALUE">
+<shadow type="dcMotor_typedEnum_runMode" id="_di@M*7W7Ql$1]@o#`Sr">
+<field name="RUN_MODE">RUN_TO_POSITION</field>
+</shadow>
+</value>
+<next>
+<block type="dcMotor_setProperty_Number" id="?bH/Vgk1h0fkf.%c:1(F">
+<field name="IDENTIFIER">tiltMAsDcMotor</field>
+<field name="PROP">Power</field>
+<data>{"IDENTIFIER":"tiltM"}</data>
+<value name="VALUE">
+<shadow type="math_number" id="X!LM39$s`[oVLB(!:eY.">
+<field name="NUM">1</field>
+</shadow>
+</value>
+</block>
+</next>
+</block>
+</next>
+</block>
+</statement>
+</block>
+<block type="procedures_defnoreturn" id="Vyxa2D25!|Sh-[3*Sa0Z" x="700" y="-100">
+<field name="NAME">Update telem</field>
+<comment pinned="false" h="80" w="160">Describe this function...</comment>
+<statement name="STACK">
+<block type="telemetry_addNumericData_Number" id=";b~_M2SB]:Hal2RpuvK$">
+<value name="KEY">
+<shadow type="text" id="]6QT2j:,a5/L:l8|m7G8">
+<field name="TEXT">Collector Tilt</field>
+</shadow>
+</value>
+<value name="NUMBER">
+<shadow type="math_number" id="bLi.`+m;rzWBhjOh_d#=">
+<field name="NUM">123</field>
+</shadow>
+<block type="servo_getProperty_Number" id="a9Z1WrM`M$mNQoaKsn6#">
+<field name="IDENTIFIER">collectorTiltSAsServo</field>
+<field name="PROP">Position</field>
+<data>{"IDENTIFIER":"collectorTiltS"}</data>
+</block>
+</value>
+<next>
+<block type="telemetry_addTextData_All" id="{l|`o$pP@;biCZc4CE}X">
+<value name="KEY">
+<shadow type="text" id="9/v%iOBcF?vn/)aTv,GD">
+<field name="TEXT">Arm Current/Target</field>
+</shadow>
+</value>
+<value name="TEXT">
+<shadow type="text" id="Xj[8UMf/@y|swZ0AXW!M">
+<field name="TEXT">text</field>
+</shadow>
+<block type="text_join" id="?{/Iy:Z,5LPlg{`}wtcC">
+<mutation items="3"/>
+<value name="ADD0">
+<block type="procedures_callreturn" id="L2{#[}vbUS^(9,]L0S}v">
+<mutation name="Get Motor Pos"/>
+</block>
+</value>
+<value name="ADD1">
+<block type="text" id="rChw}{erE-wHQk9gM*3h">
+<field name="TEXT">/</field>
+</block>
+</value>
+<value name="ADD2">
+<block type="procedures_callreturn" id="Y{^CRBTG3Zkr}S~e]-rU">
+<mutation name="Get Motor Target Pos"/>
+</block>
+</value>
+</block>
+</value>
+<next>
+<block type="telemetry_addTextData_All" id="(;1oWE*@cxCNwzN8_b_c">
+<value name="KEY">
+<shadow type="text" id="uDFa76gv^lpp,6rweY8!">
+<field name="TEXT">Collector/Arm Degree</field>
+</shadow>
+</value>
+<value name="TEXT">
+<block type="text_join" id="cl9fm;BpgE8v;{S%0/hl">
+<mutation items="3"/>
+<value name="ADD0">
+<block type="math_arithmetic" id="^Wj[3G]byqU@sC5:+KhG">
+<field name="OP">MULTIPLY</field>
+<value name="A">
+<shadow type="math_number" id="~iK/l.7w+8_N-0y(,S5o">
+<field name="NUM">1</field>
+</shadow>
+<block type="servo_getProperty_Number" id="DFP1[U%hi72(u=v:cbE-">
+<field name="IDENTIFIER">collectorTiltSAsServo</field>
+<field name="PROP">Position</field>
+<data>{"IDENTIFIER":"collectorTiltS"}</data>
+</block>
+</value>
+<value name="B">
+<shadow type="math_number" id="=XF)+=V++%z{t**T-k*X">
+<field name="NUM">270</field>
+</shadow>
+</value>
+</block>
+</value>
+<value name="ADD1">
+<block type="text" id="Y-Y11xx_ST|HCG~i%lAM">
+<field name="TEXT">/</field>
+</block>
+</value>
+<value name="ADD2">
+<block type="procedures_callreturn" id="-$_qf3;TQP_7_TF*zCy.">
+<mutation name="Get Motor Pos"/>
+</block>
+</value>
+</block>
+</value>
+<next>
+<block type="telemetry_update" id="exvivmft-pX$n!1,8Ea$"/>
+</next>
+</block>
+</next>
+</block>
+</next>
+</block>
+</statement>
+</block>
+<block type="procedures_defnoreturn" id="WtpyD@tEu+EoY=P9iY,D" deletable="false" x="84" y="73">
+<field name="NAME">runOpMode</field>
+<comment pinned="false" h="45" w="532">This function is executed when this Op Mode is selected from the Driver Station.</comment>
+<statement name="STACK">
+<block type="comment" id="Lc#BFtj*NTB48YL;eBl.">
+<field name="COMMENT">Put initialization blocks here.</field>
+<next>
+<block type="linearOpMode_waitForStart" id=":`$wN_ci`O;o6P0~.(+g">
+<next>
+<block type="procedures_callnoreturn" id="u$@7/)oX%@*F2(/K?p;e">
+<mutation name="Init Motors/Servos"/>
+<next>
+<block type="controls_if" id="}Q?5mbxSO8Di;i!__6[y">
+<value name="IF0">
+<block type="linearOpMode_opModeIsActive" id=")o%YFX/#9kvv^sgXr4~5"/>
+</value>
+<statement name="DO0">
+<block type="comment" id="(rU-p_T_/B|vExcs}liL">
+<field name="COMMENT">Put run blocks here.</field>
+<next>
+<block type="controls_whileUntil" id="^0Kagy/e+Ea{rbZPv2G6">
+<field name="MODE">WHILE</field>
+<value name="BOOL">
+<block type="linearOpMode_opModeIsActive" id="e)cr{!2VIET83s,JWC.="/>
+</value>
+<statement name="DO">
+<block type="procedures_callnoreturn" id="xcR;fU@^_fjT`~I]Bi=6">
+<mutation name="Move Arm"/>
+<next>
+<block type="procedures_callnoreturn" id="[Bp!BI+f??q`A57zQ(sz">
+<mutation name="Adjust Servo"/>
+<next>
+<block type="procedures_callnoreturn" id="n,^Uv^)dH#D`*RDz$Y:1">
+<mutation name="Update telem"/>
+</block>
+</next>
+</block>
+</next>
+</block>
+</statement>
+</block>
+</next>
+</block>
+</statement>
+</block>
+</next>
+</block>
+</next>
+</block>
+</next>
+</block>
+</statement>
+</block>
+<block type="procedures_defreturn" id="Zg[NtvKHGdT99]]Nd)DD" x="1440" y="135">
+<field name="NAME">Get Motor Pos</field>
+<comment pinned="false" h="80" w="160">Describe this function...</comment>
+<value name="RETURN">
+<block type="math_arithmetic" id="RoV#G3RDGL0LAa35FUgj">
+<field name="OP">MULTIPLY</field>
+<value name="A">
+<shadow type="math_number" id="m:UV|VKq:i/U5==~T1dx">
+<field name="NUM">1</field>
+</shadow>
+<block type="dcMotor_getProperty_Number" id="y!3]yk)78#YXdSKTziTQ">
+<field name="IDENTIFIER">tiltMAsDcMotor</field>
+<field name="PROP">CurrentPosition</field>
+<data>{"IDENTIFIER":"tiltM"}</data>
+</block>
+</value>
+<value name="B">
+<shadow type="math_number" id="7q+*}V|=#^Vf=au0XFqa">
+<field name="NUM">1.25</field>
+</shadow>
+</value>
+</block>
+</value>
+</block>
+<block type="procedures_defreturn" id="ZyGdg(|59cmmMEh[_[U2" x="1438" y="236">
+<field name="NAME">Get Motor Target Pos</field>
+<comment pinned="false" h="80" w="160">Describe this function...</comment>
+<value name="RETURN">
+<block type="math_arithmetic" id="^7M(Rm%^In(WQ`gDpZVC">
+<field name="OP">MULTIPLY</field>
+<value name="A">
+<shadow type="math_number">
+<field name="NUM">1</field>
+</shadow>
+<block type="dcMotor_getProperty_Number" id="nd(kEQ?p@Kx=w0C$fd:Y">
+<field name="IDENTIFIER">tiltMAsDcMotor</field>
+<field name="PROP">TargetPosition</field>
+<data>{"IDENTIFIER":"tiltM"}</data>
+</block>
+</value>
+<value name="B">
+<shadow type="math_number" id="4jcPv$/Y7~=`[S-[U1}5">
+<field name="NUM">1.25</field>
+</shadow>
+</value>
+</block>
+</value>
+</block>
+<block type="procedures_defnoreturn" id="2@_1X}(sI8C7ML!YN8+e" x="708" y="336">
+<field name="NAME">Adjust Servo</field>
+<comment pinned="false" h="80" w="160">Describe this function...</comment>
+<statement name="STACK">
+<block type="servo_setProperty_Number" id="a%v^5q$e.n;qFLJs!r?/">
+<field name="IDENTIFIER">collectorTiltSAsServo</field>
+<field name="PROP">Position</field>
+<data>{"IDENTIFIER":"collectorTiltS"}</data>
+<value name="VALUE">
+<shadow type="math_number" id="GE1YDUV`wk8z/`Kcvaj!">
+<field name="NUM">0.9</field>
+</shadow>
+<block type="math_arithmetic" id="J,xPhGxyZKeg;i=p4)(3">
+<field name="OP">MULTIPLY</field>
+<value name="A">
+<shadow type="math_number" id="v:{k{wC0)m-46(9{w)]=">
+<field name="NUM">1</field>
+</shadow>
+<block type="math_arithmetic" id="O5QcIkX?Vo*XvW#B[}e(">
+<field name="OP">MINUS</field>
+<value name="A">
+<shadow type="math_number" id="-K;=K(l%izTibdAZ+$z!">
+<field name="NUM">90</field>
+</shadow>
+</value>
+<value name="B">
+<shadow type="math_number" id="OsE.{B#|`?RgjOFgOC#C">
+<field name="NUM">1</field>
+</shadow>
+<block type="procedures_callreturn" id="U;1uPm~A{}USGoQZ_:Pv">
+<mutation name="Get Motor Pos"/>
+</block>
+</value>
+</block>
+</value>
+<value name="B">
+<shadow type="math_number" id="CeoYqIR~6-nJaXA8ZKCW">
+<field name="NUM">1.25</field>
+</shadow>
+<block type="math_arithmetic" id="Ad]N)z$RsW(df31]Dz`g">
+<field name="OP">DIVIDE</field>
+<value name="A">
+<shadow type="math_number" id="~Jie9cUVtT%eNdG9?U!S">
+<field name="NUM">1</field>
+</shadow>
+</value>
+<value name="B">
+<shadow type="math_number" id="R5qPN@^GF^m.V#3)Aj^l">
+<field name="NUM">270</field>
+</shadow>
+</value>
+</block>
+</value>
+</block>
+</value>
+</block>
+</statement>
+</block>
+<block type="procedures_defnoreturn" id="QCS;=I-*Ss,pl)s9~./C" x="702" y="437">
+<field name="NAME">Move Arm</field>
+<comment pinned="false" h="80" w="160">Describe this function...</comment>
+<statement name="STACK">
+<block type="dcMotor_setProperty_Number" id="~seh|IJ0Y.BixH@$~0s2">
+<field name="IDENTIFIER">tiltMAsDcMotor</field>
+<field name="PROP">TargetPosition</field>
+<data>{"IDENTIFIER":"tiltM"}</data>
+<value name="VALUE">
+<shadow type="math_number" id="7)Bwsl8UYrTwrKj^)D!~">
+<field name="NUM">0</field>
+</shadow>
+<block type="math_arithmetic" id="C9H_R4^pt/@6I*+$%fUw">
+<field name="OP">ADD</field>
+<value name="A">
+<shadow type="math_number" id=";[Aq-Yk-tOVWr:ISZ/KG">
+<field name="NUM">1</field>
+</shadow>
+<block type="dcMotor_getProperty_Number" id="54evr2:pN}eY|+|[9YJ(">
+<field name="IDENTIFIER">tiltMAsDcMotor</field>
+<field name="PROP">TargetPosition</field>
+<data>{"IDENTIFIER":"tiltM"}</data>
+</block>
+</value>
+<value name="B">
+<shadow type="math_number" id="9C+fS1!pR~MmZW%$YAln">
+<field name="NUM">1</field>
+</shadow>
+<block type="gamepad_getProperty_Number" id="vSEu{*d0YYVR|2?.uy}J">
+<field name="IDENTIFIER">gamepad1</field>
+<field name="PROP">LeftStickY</field>
+<data>{"IDENTIFIER":"gamepad1"}</data>
+</block>
+</value>
+</block>
+</value>
+</block>
+</statement>
+</block>
+</xml>
+<?xml version='1.0' encoding='UTF-8' standalone='yes' ?>
+<Extra>
+<OpModeMeta flavor="TELEOP" group="" autoTransition="" />
+<Enabled value="true" />
+</Extra>

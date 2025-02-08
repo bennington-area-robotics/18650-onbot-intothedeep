@@ -1,0 +1,558 @@
+<xml xmlns="https://developers.google.com/blockly/xml">
+<block type="procedures_defnoreturn" id="WtpyD@tEu+EoY=P9iY,D" deletable="false" x="92" y="154">
+<field name="NAME">runOpMode</field>
+<comment pinned="false" h="45" w="532">This function is executed when this Op Mode is selected from the Driver Station.</comment>
+<statement name="STACK">
+<block type="dcMotor_setProperty_Number" id="EZ)wS/(Hy8Z2a~iv]b.:">
+<field name="IDENTIFIER">rotateAsDcMotor</field>
+<field name="PROP">TargetPosition</field>
+<data>{"IDENTIFIER":"rotate"}</data>
+<value name="VALUE">
+<shadow type="math_number" id="UmDbCWt=y$[K;/vP;OYi">
+<field name="NUM">0</field>
+</shadow>
+<block type="dcMotor_getProperty_Number" id="E),j{|:p4A(g{vFi{LAx">
+<field name="IDENTIFIER">rotateAsDcMotor</field>
+<field name="PROP">CurrentPosition</field>
+<data>{"IDENTIFIER":"rotate"}</data>
+</block>
+</value>
+<next>
+<block type="comment" id="Lc#BFtj*NTB48YL;eBl.">
+<field name="COMMENT">Put initialization blocks here.</field>
+<next>
+<block type="linearOpMode_waitForStart" id=":`$wN_ci`O;o6P0~.(+g">
+<next>
+<block type="dcMotor_setProperty_RunMode" id="poni{?,Bf;gy{u3B}=Y)">
+<field name="IDENTIFIER">rotateAsDcMotor</field>
+<field name="PROP">Mode</field>
+<data>{"IDENTIFIER":"rotate"}</data>
+<value name="VALUE">
+<shadow type="dcMotor_typedEnum_runMode" id="DyXn/{cE2oRDiXThnq[~">
+<field name="RUN_MODE">RUN_TO_POSITION</field>
+</shadow>
+</value>
+<next>
+<block type="dcMotor_setProperty_Number" id="h0rc{PabLn`cTMQt/q$y">
+<field name="IDENTIFIER">rotateAsDcMotor</field>
+<field name="PROP">Power</field>
+<data>{"IDENTIFIER":"rotate"}</data>
+<value name="VALUE">
+<shadow type="math_number" id="0vjQN[TEtN?|.X4Fi:RP">
+<field name="NUM">1</field>
+</shadow>
+</value>
+<next>
+<block type="dcMotor_setProperty_Number" id=",0U*0x[JZy{ADlH6%*!l">
+<field name="IDENTIFIER">rotateAsDcMotor</field>
+<field name="PROP">TargetPosition</field>
+<data>{"IDENTIFIER":"rotate"}</data>
+<value name="VALUE">
+<shadow type="math_number">
+<field name="NUM">0</field>
+</shadow>
+<block type="dcMotor_getProperty_Number" id="`pz4Jr=0WXfAnWG/S#l5">
+<field name="IDENTIFIER">rotateAsDcMotor</field>
+<field name="PROP">CurrentPosition</field>
+<data>{"IDENTIFIER":"rotate"}</data>
+</block>
+</value>
+<next>
+<block type="dcMotor_setProperty_Number" id="!|AwN92GY^!)d|4Z{PQ;">
+<field name="IDENTIFIER">tiltedAsDcMotor</field>
+<field name="PROP">TargetPosition</field>
+<data>{"IDENTIFIER":"tilted"}</data>
+<value name="VALUE">
+<shadow type="math_number" id="8a?72:i#P)Wgx6^wK$(=">
+<field name="NUM">0</field>
+</shadow>
+<block type="dcMotor_getProperty_Number" id="C`tb,684fXlm3/Ku+weI">
+<field name="IDENTIFIER">tiltedAsDcMotor</field>
+<field name="PROP">CurrentPosition</field>
+<data>{"IDENTIFIER":"tilted"}</data>
+</block>
+</value>
+<next>
+<block type="dcMotor_setProperty_RunMode" id="KX$5HFoGd9w1z41xCnGv">
+<field name="IDENTIFIER">tiltedAsDcMotor</field>
+<field name="PROP">Mode</field>
+<data>{"IDENTIFIER":"tilted"}</data>
+<value name="VALUE">
+<shadow type="dcMotor_typedEnum_runMode" id="qM)V91m~o+G~jUu~QT|c">
+<field name="RUN_MODE">RUN_TO_POSITION</field>
+</shadow>
+</value>
+<next>
+<block type="dcMotor_setProperty_RunMode" id="Q!TaCWgSS1b=2z!^Ijdk">
+<field name="IDENTIFIER">telescopearmAsDcMotor</field>
+<field name="PROP">Mode</field>
+<data>{"IDENTIFIER":"telescope arm"}</data>
+<value name="VALUE">
+<shadow type="dcMotor_typedEnum_runMode" id="P;#~GA)-F~XjbJ*@6XH^">
+<field name="RUN_MODE">RUN_WITHOUT_ENCODER</field>
+</shadow>
+</value>
+<next>
+<block type="dcMotor_setProperty_RunMode" id="]1|3K1pMH#OSC#R@!LXO">
+<field name="IDENTIFIER">randptiltAsDcMotor</field>
+<field name="PROP">Mode</field>
+<data>{"IDENTIFIER":"r and p tilt"}</data>
+<value name="VALUE">
+<shadow type="dcMotor_typedEnum_runMode" id="J-PK9/p{wvvf)!D_yPWU">
+<field name="RUN_MODE">RUN_USING_ENCODER</field>
+</shadow>
+</value>
+<next>
+<block type="dcMotor_setProperty_Number" id="d3%g~?rrM-Gi9wRsRlnw">
+<field name="IDENTIFIER">tiltedAsDcMotor</field>
+<field name="PROP">TargetPositionTolerance</field>
+<data>{"IDENTIFIER":"tilted"}</data>
+<value name="VALUE">
+<shadow type="math_number" id="OAktcM]RyQWTpG$W$zlC">
+<field name="NUM">5</field>
+</shadow>
+</value>
+<next>
+<block type="dcMotor_setProperty_Number" id=":`rVNXl}=lD,Ji--FYZV">
+<field name="IDENTIFIER">tiltedAsDcMotor</field>
+<field name="PROP">Power</field>
+<data>{"IDENTIFIER":"tilted"}</data>
+<value name="VALUE">
+<shadow type="math_number" id="qMT{F`@(0~kt}:WN/%`_">
+<field name="NUM">0.5</field>
+</shadow>
+</value>
+<next>
+<block type="controls_if" id="}Q?5mbxSO8Di;i!__6[y">
+<value name="IF0">
+<block type="linearOpMode_opModeIsActive" id=")o%YFX/#9kvv^sgXr4~5"/>
+</value>
+<statement name="DO0">
+<block type="controls_whileUntil" id="^0Kagy/e+Ea{rbZPv2G6">
+<field name="MODE">WHILE</field>
+<value name="BOOL">
+<block type="linearOpMode_opModeIsActive" id="e)cr{!2VIET83s,JWC.="/>
+</value>
+<statement name="DO">
+<block type="controls_if" id="b;idsIBmf`fMukgnTflc">
+<mutation elseif="1" else="1"/>
+<value name="IF0">
+<block type="gamepad_getProperty_Boolean" id="-iz-j@,Zw.,Jb+.OdsN/">
+<field name="IDENTIFIER">gamepad1</field>
+<field name="PROP">DpadUp</field>
+<data>{"IDENTIFIER":"gamepad1"}</data>
+</block>
+</value>
+<statement name="DO0">
+<block type="dcMotor_setProperty_Number" id="e9Fq=Q_DGw6?W(pZJRVd">
+<field name="IDENTIFIER">telescopearmAsDcMotor</field>
+<field name="PROP">Power</field>
+<data>{"IDENTIFIER":"telescope arm"}</data>
+<value name="VALUE">
+<shadow type="math_number" id="iXjbj;lIAnHO@tCU5CMT">
+<field name="NUM">0.5</field>
+</shadow>
+</value>
+</block>
+</statement>
+<value name="IF1">
+<block type="gamepad_getProperty_Boolean" id="ANPRQxR?EP1ILI|mSS#p">
+<field name="IDENTIFIER">gamepad1</field>
+<field name="PROP">DpadDown</field>
+<data>{"IDENTIFIER":"gamepad1"}</data>
+</block>
+</value>
+<statement name="DO1">
+<block type="dcMotor_setProperty_Number" id="5Sr`l/z*KC3_{cM}HSvr">
+<field name="IDENTIFIER">telescopearmAsDcMotor</field>
+<field name="PROP">Power</field>
+<data>{"IDENTIFIER":"telescope arm"}</data>
+<value name="VALUE">
+<shadow type="math_number" id="d2DF[Kk1Ic#$(ThEXy-W">
+<field name="NUM">-0.5</field>
+</shadow>
+</value>
+</block>
+</statement>
+<statement name="ELSE">
+<block type="dcMotor_setProperty_Number" id="mrb/WhKbB1//?%sn3ExB">
+<field name="IDENTIFIER">telescopearmAsDcMotor</field>
+<field name="PROP">Power</field>
+<data>{"IDENTIFIER":"telescope arm"}</data>
+<value name="VALUE">
+<shadow type="math_number" id="k6]tx94z4:Po!_3Ol7K0">
+<field name="NUM">0</field>
+</shadow>
+</value>
+</block>
+</statement>
+<next>
+<block type="controls_if" id=":hU4{K_#LZq/BiAm=[iH">
+<mutation elseif="1" else="1"/>
+<value name="IF0">
+<block type="gamepad_getProperty_Boolean" id="pw_8,$f:|``FFMbm*BCn">
+<field name="IDENTIFIER">gamepad1</field>
+<field name="PROP">DpadLeft</field>
+<data>{"IDENTIFIER":"gamepad1"}</data>
+</block>
+</value>
+<statement name="DO0">
+<block type="dcMotor_setProperty_Number" id=")Eitx-R3FfcbQJ)HFd(d">
+<field name="IDENTIFIER">randptiltAsDcMotor</field>
+<field name="PROP">Power</field>
+<data>{"IDENTIFIER":"r and p tilt"}</data>
+<value name="VALUE">
+<shadow type="math_number" id="Tw}B;4GT^.d]]HOm[yZ2">
+<field name="NUM">1</field>
+</shadow>
+</value>
+</block>
+</statement>
+<value name="IF1">
+<block type="gamepad_getProperty_Boolean" id="l7!pJisNU!?_(jqO=Y2;">
+<field name="IDENTIFIER">gamepad1</field>
+<field name="PROP">DpadRight</field>
+<data>{"IDENTIFIER":"gamepad1"}</data>
+</block>
+</value>
+<statement name="DO1">
+<block type="dcMotor_setProperty_Number" id="]%C.dy/Z%0@N#Z]5]X(u">
+<field name="IDENTIFIER">randptiltAsDcMotor</field>
+<field name="PROP">Power</field>
+<data>{"IDENTIFIER":"r and p tilt"}</data>
+<value name="VALUE">
+<shadow type="math_number" id="/X3J9Mu6BwzDbn96tWLk">
+<field name="NUM">-1</field>
+</shadow>
+</value>
+</block>
+</statement>
+<statement name="ELSE">
+<block type="dcMotor_setProperty_Number" id="1[E`%bG0*n61!bV)`xmw">
+<field name="IDENTIFIER">randptiltAsDcMotor</field>
+<field name="PROP">Power</field>
+<data>{"IDENTIFIER":"r and p tilt"}</data>
+<value name="VALUE">
+<shadow type="math_number" id="_XjzY{p#eM=mS!)u4SWl">
+<field name="NUM">0</field>
+</shadow>
+</value>
+</block>
+</statement>
+<next>
+<block type="telemetry_addTextData_All" id="*!VM%OW=-{:go9{lGw_O">
+<value name="KEY">
+<shadow type="text" id="wFX5AbtzAz9M1;WvNsI_">
+<field name="TEXT">key</field>
+</shadow>
+</value>
+<value name="TEXT">
+<shadow type="text" id="OIzr{,zjMS4%Yk5ig4wA">
+<field name="TEXT">text</field>
+</shadow>
+<block type="dcMotor_getProperty_Number" id="o%(BtfB/yr?l|}QPXe`?">
+<field name="IDENTIFIER">tiltedAsDcMotor</field>
+<field name="PROP">CurrentPosition</field>
+<data>{"IDENTIFIER":"tilted"}</data>
+</block>
+</value>
+<next>
+<block type="telemetry_addTextData_All" id="v[9$TuxKo-/NYt*d|T,a">
+<value name="KEY">
+<shadow type="text" id="^C}]+Nz|_xQK~VCKw`9E">
+<field name="TEXT">4</field>
+</shadow>
+</value>
+<value name="TEXT">
+<shadow type="text" id="45]8V9YGKQx`,MJhyS;R">
+<field name="TEXT">text</field>
+</shadow>
+<block type="dcMotor_getProperty_Number" id="Aq6P/kwc8{5;EkCa}-Lk">
+<field name="IDENTIFIER">tiltedAsDcMotor</field>
+<field name="PROP">TargetPosition</field>
+<data>{"IDENTIFIER":"tilted"}</data>
+</block>
+</value>
+<next>
+<block type="controls_if" id="|+`#[SfJT#EzSSc@Qlq,">
+<mutation elseif="1"/>
+<value name="IF0">
+<block type="gamepad_getProperty_Boolean" id="-Pm-XEN$`CpKQfDC/pr{">
+<field name="IDENTIFIER">gamepad1</field>
+<field name="PROP">A</field>
+<data>{"IDENTIFIER":"gamepad1"}</data>
+</block>
+</value>
+<statement name="DO0">
+<block type="dcMotor_setProperty_Number" id="EkNCn!1F-kqWNLk~Jr5{">
+<field name="IDENTIFIER">tiltedAsDcMotor</field>
+<field name="PROP">TargetPosition</field>
+<data>{"IDENTIFIER":"tilted"}</data>
+<value name="VALUE">
+<shadow type="math_number" id="!}R6r5XTv*OtJs03f?Zd">
+<field name="NUM">0.25</field>
+</shadow>
+<block type="math_arithmetic" id="O7-%/MhwP$v4|P785X(K">
+<field name="OP">ADD</field>
+<value name="A">
+<shadow type="math_number" id="*9Htzxh8St%/w_x$}9y(">
+<field name="NUM">1</field>
+</shadow>
+<block type="dcMotor_getProperty_Number" id="no1+#c3S0l;wfh#X*I/[">
+<field name="IDENTIFIER">tiltedAsDcMotor</field>
+<field name="PROP">TargetPosition</field>
+<data>{"IDENTIFIER":"tilted"}</data>
+</block>
+</value>
+<value name="B">
+<shadow type="math_number" id="!WaOW(/ls-gda9C1n#!v">
+<field name="NUM">1</field>
+</shadow>
+</value>
+</block>
+</value>
+<next>
+<block type="telemetry_addNumericData_Number" id="G#LROjyi:Md50.}y:Q5e">
+<value name="KEY">
+<shadow type="text" id="{]?Hu.SbeI}HWw}hT,:@">
+<field name="TEXT">a</field>
+</shadow>
+</value>
+<value name="NUMBER">
+<shadow type="math_number" id="-w=}ml0OQ#ys!nfKC6}L">
+<field name="NUM">123</field>
+</shadow>
+<block type="dcMotor_getProperty_Number" id="waZ3EbKXaY?*pY3p-^%y">
+<field name="IDENTIFIER">tiltedAsDcMotor</field>
+<field name="PROP">TargetPosition</field>
+<data>{"IDENTIFIER":"tilted"}</data>
+</block>
+</value>
+</block>
+</next>
+</block>
+</statement>
+<value name="IF1">
+<block type="gamepad_getProperty_Boolean" id="D2zlSMKe)Xc}vDfBs0wt">
+<field name="IDENTIFIER">gamepad1</field>
+<field name="PROP">B</field>
+<data>{"IDENTIFIER":"gamepad1"}</data>
+</block>
+</value>
+<statement name="DO1">
+<block type="dcMotor_setProperty_Number" id="8zSty|_{=+34;Fx7BZB_">
+<field name="IDENTIFIER">tiltedAsDcMotor</field>
+<field name="PROP">TargetPosition</field>
+<data>{"IDENTIFIER":"tilted"}</data>
+<value name="VALUE">
+<shadow type="math_number" id="#Ca-E929%_JFXxw{b]%o">
+<field name="NUM">-0.25</field>
+</shadow>
+<block type="math_arithmetic" id="/z,uebC5ZED;.9p{kh2F">
+<field name="OP">ADD</field>
+<value name="A">
+<shadow type="math_number" id="x^~[%D8*iNm/0Wz#Op6[">
+<field name="NUM">1</field>
+</shadow>
+<block type="dcMotor_getProperty_Number" id="_o%P~}ZA`3BJNEb*]p;;">
+<field name="IDENTIFIER">tiltedAsDcMotor</field>
+<field name="PROP">TargetPosition</field>
+<data>{"IDENTIFIER":"tilted"}</data>
+</block>
+</value>
+<value name="B">
+<shadow type="math_number" id="Z@#O_tg49*n87,DzW@W1">
+<field name="NUM">-1</field>
+</shadow>
+</value>
+</block>
+</value>
+<next>
+<block type="telemetry_addNumericData_Number" id="9qH%[#@4vCV?v*nbtR5+">
+<value name="KEY">
+<shadow type="text" id="uTdA.upp4[/N~C^JwZ|Y">
+<field name="TEXT">b</field>
+</shadow>
+</value>
+<value name="NUMBER">
+<shadow type="math_number" id="8m0;MC.Rbck9nqvEKQ^`">
+<field name="NUM">123</field>
+</shadow>
+<block type="dcMotor_getProperty_Number" id="W4-1!=(~P(~tCL@9:d;)">
+<field name="IDENTIFIER">tiltedAsDcMotor</field>
+<field name="PROP">TargetPosition</field>
+<data>{"IDENTIFIER":"tilted"}</data>
+</block>
+</value>
+</block>
+</next>
+</block>
+</statement>
+<next>
+<block type="controls_if" id="t(5w`,YNY:]WkV)%G,R(">
+<mutation elseif="1"/>
+<value name="IF0">
+<block type="gamepad_getProperty_Boolean" id="YLa*Av)3x:A)1|~X@k6}">
+<field name="IDENTIFIER">gamepad1</field>
+<field name="PROP">X</field>
+<data>{"IDENTIFIER":"gamepad1"}</data>
+</block>
+</value>
+<statement name="DO0">
+<block type="dcMotor_setProperty_Number" id="rNR~GVW+dMhK:Wv50agc">
+<field name="IDENTIFIER">rotateAsDcMotor</field>
+<field name="PROP">TargetPosition</field>
+<data>{"IDENTIFIER":"rotate"}</data>
+<value name="VALUE">
+<shadow type="math_number">
+<field name="NUM">0</field>
+</shadow>
+<block type="math_arithmetic" id="k}J*_e(CVhLU9)Q!!jE;">
+<field name="OP">ADD</field>
+<value name="A">
+<shadow type="math_number">
+<field name="NUM">1</field>
+</shadow>
+<block type="dcMotor_getProperty_Number" id="0*N]@ggSY`Bp`kOyzNrg">
+<field name="IDENTIFIER">rotateAsDcMotor</field>
+<field name="PROP">TargetPosition</field>
+<data>{"IDENTIFIER":"rotate"}</data>
+</block>
+</value>
+<value name="B">
+<shadow type="math_number" id="MAdPmAY7h8|]}NwAm,ie">
+<field name="NUM">1</field>
+</shadow>
+</value>
+</block>
+</value>
+</block>
+</statement>
+<value name="IF1">
+<block type="gamepad_getProperty_Boolean" id="+:XHho1$nRUqd/+2Njg5">
+<field name="IDENTIFIER">gamepad1</field>
+<field name="PROP">Y</field>
+<data>{"IDENTIFIER":"gamepad1"}</data>
+</block>
+</value>
+<statement name="DO1">
+<block type="dcMotor_setProperty_Number" id="{oj:f1U,~*?T5[x9/Yne">
+<field name="IDENTIFIER">rotateAsDcMotor</field>
+<field name="PROP">TargetPosition</field>
+<data>{"IDENTIFIER":"rotate"}</data>
+<value name="VALUE">
+<shadow type="math_number" id="@^N*6S(cWTdjLtKluLx.">
+<field name="NUM">0</field>
+</shadow>
+<block type="math_arithmetic" id="l8s%nV!:4MJK!V|@1w*i">
+<field name="OP">MINUS</field>
+<value name="A">
+<shadow type="math_number" id="W/#Jux(1Y?+-xKCNgyJZ">
+<field name="NUM">1</field>
+</shadow>
+<block type="dcMotor_getProperty_Number" id="i7#aDMc*gbuUb[+~SwYO">
+<field name="IDENTIFIER">rotateAsDcMotor</field>
+<field name="PROP">TargetPosition</field>
+<data>{"IDENTIFIER":"rotate"}</data>
+</block>
+</value>
+<value name="B">
+<shadow type="math_number" id="2~kF8A:=()quC-RXqT84">
+<field name="NUM">1</field>
+</shadow>
+</value>
+</block>
+</value>
+<next>
+<block type="telemetry_addNumericData_Number" id="^+DlbEcc+hwjnFUySxfz">
+<value name="KEY">
+<shadow type="text" id="2H#eMcu0$QMKb~]/50OQ">
+<field name="TEXT">b</field>
+</shadow>
+</value>
+<value name="NUMBER">
+<shadow type="math_number">
+<field name="NUM">123</field>
+</shadow>
+<block type="dcMotor_getProperty_Number" id="%GYk0tQ68mq.k@6Mubm:">
+<field name="IDENTIFIER">rotateAsDcMotor</field>
+<field name="PROP">TargetPosition</field>
+<data>{"IDENTIFIER":"rotate"}</data>
+</block>
+</value>
+</block>
+</next>
+</block>
+</statement>
+<next>
+<block type="comment" id="Jh/;L$n@JuX8AQJDFCul">
+<field name="COMMENT">Put loop blocks here.</field>
+<next>
+<block type="telemetry_update" id="exvivmft-pX$n!1,8Ea$"/>
+</next>
+</block>
+</next>
+</block>
+</next>
+</block>
+</next>
+</block>
+</next>
+</block>
+</next>
+</block>
+</next>
+</block>
+</statement>
+</block>
+</statement>
+<next>
+<block type="dcMotor_setProperty_Number" id="CApH?Tu``#3rS%we%1sv">
+<field name="IDENTIFIER">rotateAsDcMotor</field>
+<field name="PROP">TargetPosition</field>
+<data>{"IDENTIFIER":"rotate"}</data>
+<value name="VALUE">
+<shadow type="math_number" id="w(N@mqTQMqdxxQp*8Wgo">
+<field name="NUM">0</field>
+</shadow>
+<block type="dcMotor_getProperty_Number" id="86D#vBj/?pi|KEJybO%:">
+<field name="IDENTIFIER">rotateAsDcMotor</field>
+<field name="PROP">CurrentPosition</field>
+<data>{"IDENTIFIER":"rotate"}</data>
+</block>
+</value>
+</block>
+</next>
+</block>
+</next>
+</block>
+</next>
+</block>
+</next>
+</block>
+</next>
+</block>
+</next>
+</block>
+</next>
+</block>
+</next>
+</block>
+</next>
+</block>
+</next>
+</block>
+</next>
+</block>
+</next>
+</block>
+</next>
+</block>
+</statement>
+</block>
+</xml>
+<?xml version='1.0' encoding='UTF-8' standalone='yes' ?>
+<Extra>
+<OpModeMeta flavor="TELEOP" group="" autoTransition="" />
+<Enabled value="true" />
+</Extra>

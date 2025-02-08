@@ -1,0 +1,264 @@
+<xml xmlns="https://developers.google.com/blockly/xml">
+<block type="procedures_defnoreturn" id="WtpyD@tEu+EoY=P9iY,D" deletable="false" x="50" y="50">
+<field name="NAME">runOpMode</field>
+<comment pinned="false" h="45" w="532">This function is executed when this Op Mode is selected from the Driver Station.</comment>
+<statement name="STACK">
+<block type="comment" id="Lc#BFtj*NTB48YL;eBl.">
+<field name="COMMENT">Put initialization blocks here.</field>
+<next>
+<block type="linearOpMode_waitForStart" id=":`$wN_ci`O;o6P0~.(+g">
+<next>
+<block type="controls_if" id="}Q?5mbxSO8Di;i!__6[y">
+<value name="IF0">
+<block type="linearOpMode_opModeIsActive" id=")o%YFX/#9kvv^sgXr4~5"/>
+</value>
+<statement name="DO0">
+<block type="comment" id="(rU-p_T_/B|vExcs}liL">
+<field name="COMMENT">Put run blocks here.</field>
+<next>
+<block type="controls_whileUntil" id="^0Kagy/e+Ea{rbZPv2G6">
+<field name="MODE">WHILE</field>
+<value name="BOOL">
+<block type="linearOpMode_opModeIsActive" id="e)cr{!2VIET83s,JWC.="/>
+</value>
+<statement name="DO">
+<block type="telemetry_addNumericData_Number" id="[^1EoJG)^^e:^6Gg;otu">
+<value name="KEY">
+<shadow type="text" id="{$HvM?hkiPmLjSj1]%$U">
+<field name="TEXT">motor speed</field>
+</shadow>
+</value>
+<value name="NUMBER">
+<shadow type="math_number" id=":@ksCykCv$+Y]VS$7^]$">
+<field name="NUM">123</field>
+</shadow>
+<block type="math_round" id="I4C9)L45.K`TBJy,N8Q(">
+<field name="OP">ROUND</field>
+<value name="NUM">
+<shadow type="math_number" id=";CgtgjXZ)$2{$;Qy=etU">
+<field name="NUM">3.1</field>
+</shadow>
+<block type="dcMotor_getProperty_Number" id="(5Bz*_f0t[B,Vjp~R[wE">
+<field name="IDENTIFIER">sirhickoryvanschnoodleklowskitheIVAsDcMotor</field>
+<field name="PROP">Power</field>
+<data>{"IDENTIFIER":"sir hickory van schnoodle klowski the IV"}</data>
+</block>
+</value>
+</block>
+</value>
+<next>
+<block type="telemetry_update" id="ZJmD7!7M`GtgP5+Bny{[">
+<next>
+<block type="controls_if" id="9Cr8laJBCo}jXGl/Ap_#">
+<value name="IF0">
+<block type="gamepad_getProperty_Boolean" id="9*3^w`M`r:|gk+vkd12P">
+<field name="IDENTIFIER">gamepad1</field>
+<field name="PROP">DpadRight</field>
+<data>{"IDENTIFIER":"gamepad1"}</data>
+</block>
+</value>
+<statement name="DO0">
+<block type="dcMotor_setProperty_Number" id="otA#0mqPdf^nFg~Rt_+5">
+<field name="IDENTIFIER">sirhickoryvanschnoodleklowskitheIVAsDcMotor</field>
+<field name="PROP">Power</field>
+<data>{"IDENTIFIER":"sir hickory van schnoodle klowski the IV"}</data>
+<value name="VALUE">
+<shadow type="math_number">
+<field name="NUM">0</field>
+</shadow>
+<block type="math_arithmetic" id="nV)Gay*e0NWz8fHytQgB">
+<field name="OP">ADD</field>
+<value name="A">
+<shadow type="math_number" id="2eU$rn`hG/L.a5Hn!@{t">
+<field name="NUM">0.1</field>
+</shadow>
+</value>
+<value name="B">
+<shadow type="math_number">
+<field name="NUM">1</field>
+</shadow>
+<block type="dcMotor_getProperty_Number" id="cJUCY$b#coIC2SjJ(!)*">
+<field name="IDENTIFIER">sirhickoryvanschnoodleklowskitheIVAsDcMotor</field>
+<field name="PROP">Power</field>
+<data>{"IDENTIFIER":"sir hickory van schnoodle klowski the IV"}</data>
+</block>
+</value>
+</block>
+</value>
+</block>
+</statement>
+<next>
+<block type="controls_if" id="p5^%vZb[z3x#*f9D0TR]">
+<value name="IF0">
+<block type="gamepad_getProperty_Boolean" id="lKmfY,yNsR7x%eK0#u_n">
+<field name="IDENTIFIER">gamepad1</field>
+<field name="PROP">DpadLeft</field>
+<data>{"IDENTIFIER":"gamepad1"}</data>
+</block>
+</value>
+<statement name="DO0">
+<block type="dcMotor_setProperty_Number" id="KnV=XvJELK}.v1tnEayo">
+<field name="IDENTIFIER">sirhickoryvanschnoodleklowskitheIVAsDcMotor</field>
+<field name="PROP">Power</field>
+<data>{"IDENTIFIER":"sir hickory van schnoodle klowski the IV"}</data>
+<value name="VALUE">
+<shadow type="math_number" id="eNkFz=mOoE%MTeK_%J4@">
+<field name="NUM">0</field>
+</shadow>
+<block type="math_arithmetic" id="Kd~0G;1]}U}6XE+#`{7T">
+<field name="OP">MINUS</field>
+<value name="A">
+<shadow type="math_number" id="PhE#!!,5SG2-NH(pw[~L">
+<field name="NUM">0.1</field>
+</shadow>
+<block type="dcMotor_getProperty_Number" id="i-w8lM+oad6DxFhBXs~|">
+<field name="IDENTIFIER">sirhickoryvanschnoodleklowskitheIVAsDcMotor</field>
+<field name="PROP">Power</field>
+<data>{"IDENTIFIER":"sir hickory van schnoodle klowski the IV"}</data>
+</block>
+</value>
+<value name="B">
+<shadow type="math_number" id="h7d:6wZVEp=K(1;Od}`s">
+<field name="NUM">0.1</field>
+</shadow>
+</value>
+</block>
+</value>
+</block>
+</statement>
+<next>
+<block type="controls_if" id="vP0gE@t!v4p+0JXQ7h%j">
+<value name="IF0">
+<block type="gamepad_getProperty_Boolean" id="FAMoxo`%g_.YI$l@XAGK">
+<field name="IDENTIFIER">gamepad1</field>
+<field name="PROP">DpadUp</field>
+<data>{"IDENTIFIER":"gamepad1"}</data>
+</block>
+</value>
+<statement name="DO0">
+<block type="dcMotor_setProperty_Number" id="BcAvT-Hret;OsH?u%8M_">
+<field name="IDENTIFIER">sirhickoryvanschnoodleklowskitheIVAsDcMotor</field>
+<field name="PROP">Power</field>
+<data>{"IDENTIFIER":"sir hickory van schnoodle klowski the IV"}</data>
+<value name="VALUE">
+<shadow type="math_number" id="a7t]%9ZMnil$JKL[$=0=">
+<field name="NUM">0</field>
+</shadow>
+</value>
+<next>
+<block type="dcMotor_setProperty_Direction" id="-p6AQxd5^/VIRB2[}:iO">
+<field name="IDENTIFIER">sirhickoryvanschnoodleklowskitheIVAsDcMotor</field>
+<field name="PROP">Direction</field>
+<data>{"IDENTIFIER":"sir hickory van schnoodle klowski the IV"}</data>
+<value name="VALUE">
+<shadow type="dcMotor_typedEnum_direction" id="{b7GkeF=Y3#2Fx76YCOB">
+<field name="DIRECTION">FORWARD</field>
+</shadow>
+</value>
+<next>
+<block type="dcMotor_setProperty_Number" id=",,-BI)fjYH*nE3tZyfBE">
+<field name="IDENTIFIER">sirhickoryvanschnoodleklowskitheIVAsDcMotor</field>
+<field name="PROP">Power</field>
+<data>{"IDENTIFIER":"sir hickory van schnoodle klowski the IV"}</data>
+<value name="VALUE">
+<shadow type="math_number" id="a$QF{i2V|=jAvA=z}Bb=">
+<field name="NUM">0.1</field>
+</shadow>
+</value>
+</block>
+</next>
+</block>
+</next>
+</block>
+</statement>
+<next>
+<block type="controls_if" id="`i}npwM3x85@PF+f%S)~">
+<value name="IF0">
+<block type="gamepad_getProperty_Boolean" id="?J|#P?d-$vWUH-KylHZ=">
+<field name="IDENTIFIER">gamepad1</field>
+<field name="PROP">DpadDown</field>
+<data>{"IDENTIFIER":"gamepad1"}</data>
+</block>
+</value>
+<statement name="DO0">
+<block type="dcMotor_setProperty_Number" id="KKSH2f/il-#PkP^dl_AG">
+<field name="IDENTIFIER">sirhickoryvanschnoodleklowskitheIVAsDcMotor</field>
+<field name="PROP">Power</field>
+<data>{"IDENTIFIER":"sir hickory van schnoodle klowski the IV"}</data>
+<value name="VALUE">
+<shadow type="math_number" id="#|B!JLn#2u2NzvC^.6$)">
+<field name="NUM">0</field>
+</shadow>
+</value>
+<next>
+<block type="dcMotor_setProperty_Direction" id="}Q`Kb4GwJ#54xm9a/P[W">
+<field name="IDENTIFIER">sirhickoryvanschnoodleklowskitheIVAsDcMotor</field>
+<field name="PROP">Direction</field>
+<data>{"IDENTIFIER":"sir hickory van schnoodle klowski the IV"}</data>
+<value name="VALUE">
+<shadow type="dcMotor_typedEnum_direction" id="c[8n32O?B~.c{?Rs${oT">
+<field name="DIRECTION">REVERSE</field>
+</shadow>
+</value>
+<next>
+<block type="dcMotor_setProperty_Number" id="9n]O(@,Zu+Up]%D)CTEo">
+<field name="IDENTIFIER">sirhickoryvanschnoodleklowskitheIVAsDcMotor</field>
+<field name="PROP">Power</field>
+<data>{"IDENTIFIER":"sir hickory van schnoodle klowski the IV"}</data>
+<value name="VALUE">
+<shadow type="math_number" id=")kgIauEma#p$Dy)n,?H.">
+<field name="NUM">0.1</field>
+</shadow>
+</value>
+</block>
+</next>
+</block>
+</next>
+</block>
+</statement>
+<next>
+<block type="linearOpMode_sleep_Number" id="@M,N6W+vdw*h/y$iW9D^">
+<value name="MILLISECONDS">
+<shadow type="math_number" id="#7Y0$;fERMc5XfpUueV/">
+<field name="NUM">100</field>
+</shadow>
+</value>
+<next>
+<block type="comment" id="Jh/;L$n@JuX8AQJDFCul">
+<field name="COMMENT">Put loop blocks here.</field>
+<next>
+<block type="telemetry_update" id="exvivmft-pX$n!1,8Ea$"/>
+</next>
+</block>
+</next>
+</block>
+</next>
+</block>
+</next>
+</block>
+</next>
+</block>
+</next>
+</block>
+</next>
+</block>
+</next>
+</block>
+</statement>
+</block>
+</next>
+</block>
+</statement>
+</block>
+</next>
+</block>
+</next>
+</block>
+</statement>
+</block>
+</xml>
+<?xml version='1.0' encoding='UTF-8' standalone='yes' ?>
+<Extra>
+<OpModeMeta flavor="TELEOP" group="" autoTransition="" />
+<Enabled value="true" />
+</Extra>

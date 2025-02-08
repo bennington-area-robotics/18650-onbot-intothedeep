@@ -1,0 +1,170 @@
+<xml xmlns="https://developers.google.com/blockly/xml">
+<block type="procedures_defnoreturn" id="WtpyD@tEu+EoY=P9iY,D" deletable="false" x="114" y="127">
+<field name="NAME">runOpMode</field>
+<comment pinned="false" h="45" w="532">This function is executed when this Op Mode is selected from the Driver Station.</comment>
+<statement name="STACK">
+<block type="comment" id="Lc#BFtj*NTB48YL;eBl.">
+<field name="COMMENT">Put initialization blocks here.</field>
+<next>
+<block type="linearOpMode_waitForStart" id=":`$wN_ci`O;o6P0~.(+g">
+<next>
+<block type="controls_if" id="}Q?5mbxSO8Di;i!__6[y">
+<value name="IF0">
+<block type="linearOpMode_opModeIsActive" id=")o%YFX/#9kvv^sgXr4~5"/>
+</value>
+<statement name="DO0">
+<block type="dcMotor_setProperty_RunMode" id="2vMfx=j!x;Y*c^Z8C|NS">
+<field name="IDENTIFIER">telescopearmAsDcMotor</field>
+<field name="PROP">Mode</field>
+<data>{"IDENTIFIER":"telescope arm"}</data>
+<value name="VALUE">
+<shadow type="dcMotor_typedEnum_runMode" id="U1*2Y|~ij/,:8~}R9D^L">
+<field name="RUN_MODE">RUN_WITHOUT_ENCODER</field>
+</shadow>
+</value>
+<next>
+<block type="dcMotor_setProperty_Direction" id="PxhexH09Gz?sxE1.1v~~">
+<field name="IDENTIFIER">telescopearmAsDcMotor</field>
+<field name="PROP">Direction</field>
+<data>{"IDENTIFIER":"telescope arm"}</data>
+<value name="VALUE">
+<shadow type="dcMotor_typedEnum_direction" id="i8^Jd^UGH9VHLq?Ul.uj">
+<field name="DIRECTION">FORWARD</field>
+</shadow>
+</value>
+<next>
+<block type="comment" id="(rU-p_T_/B|vExcs}liL">
+<field name="COMMENT">Put run blocks here.</field>
+<next>
+<block type="controls_whileUntil" id="^0Kagy/e+Ea{rbZPv2G6">
+<field name="MODE">WHILE</field>
+<value name="BOOL">
+<block type="linearOpMode_opModeIsActive" id="e)cr{!2VIET83s,JWC.="/>
+</value>
+<statement name="DO">
+<block type="controls_if" id="[VQdf$%`3ca[qf13@uT3">
+<mutation elseif="1" else="1"/>
+<value name="IF0">
+<block type="gamepad_getProperty_Boolean" id="X5TACjnVAj{;12fQ4ZHn">
+<field name="IDENTIFIER">gamepad1</field>
+<field name="PROP">B</field>
+<data>{"IDENTIFIER":"gamepad1"}</data>
+</block>
+</value>
+<statement name="DO0">
+<block type="dcMotor_setProperty_Number" id="-SXgrZS?gRn{;E(k_:Jd">
+<field name="IDENTIFIER">telescopearmAsDcMotor</field>
+<field name="PROP">Power</field>
+<data>{"IDENTIFIER":"telescope arm"}</data>
+<value name="VALUE">
+<shadow type="math_number" id=":Dr=dPS[5NZ9HK~[7dM(">
+<field name="NUM">-1</field>
+</shadow>
+</value>
+</block>
+</statement>
+<value name="IF1">
+<block type="gamepad_getProperty_Boolean" id="W{:)q#pE^0xey;L1R:uY">
+<field name="IDENTIFIER">gamepad1</field>
+<field name="PROP">A</field>
+<data>{"IDENTIFIER":"gamepad1"}</data>
+</block>
+</value>
+<statement name="DO1">
+<block type="dcMotor_setProperty_Number" id="+[%F7eHi_Iw*X9~WxbuR">
+<field name="IDENTIFIER">telescopearmAsDcMotor</field>
+<field name="PROP">Power</field>
+<data>{"IDENTIFIER":"telescope arm"}</data>
+<value name="VALUE">
+<shadow type="math_number" id="tWK|+aBd#X9O[od~@Yh.">
+<field name="NUM">1</field>
+</shadow>
+</value>
+</block>
+</statement>
+<statement name="ELSE">
+<block type="dcMotor_setProperty_Number" id=")W?-0p)*Z^OU3G8hg*zZ">
+<field name="IDENTIFIER">telescopearmAsDcMotor</field>
+<field name="PROP">Power</field>
+<data>{"IDENTIFIER":"telescope arm"}</data>
+<value name="VALUE">
+<shadow type="math_number" id="mxxs.^B1k8NRWL8Z)nN{">
+<field name="NUM">0</field>
+</shadow>
+</value>
+</block>
+</statement>
+<next>
+<block type="controls_if" id="$?I7UJ4Q|3F~*f|GjrOL">
+<mutation elseif="1"/>
+<value name="IF0">
+<block type="gamepad_getProperty_Boolean" id="7.3sYi|p#7Pjz7A(iAnz">
+<field name="IDENTIFIER">gamepad1</field>
+<field name="PROP">Y</field>
+<data>{"IDENTIFIER":"gamepad1"}</data>
+</block>
+</value>
+<statement name="DO0">
+<block type="servo_setProperty_Number" id=",Jt:;1i,%yf,iPpO;*~z">
+<field name="IDENTIFIER">encollectAsServo</field>
+<field name="PROP">Position</field>
+<data>{"IDENTIFIER":"e/n collect"}</data>
+<value name="VALUE">
+<shadow type="math_number" id="kHXIg:/0NIBy-Vg~$HjK">
+<field name="NUM">0</field>
+</shadow>
+</value>
+</block>
+</statement>
+<value name="IF1">
+<block type="gamepad_getProperty_Boolean" id="DD8uzEIA$^6~7,~[pcsI">
+<field name="IDENTIFIER">gamepad1</field>
+<field name="PROP">X</field>
+<data>{"IDENTIFIER":"gamepad1"}</data>
+</block>
+</value>
+<statement name="DO1">
+<block type="servo_setProperty_Number" id="{q?)1zlp_XSQ1w+L7Jev">
+<field name="IDENTIFIER">encollectAsServo</field>
+<field name="PROP">Position</field>
+<data>{"IDENTIFIER":"e/n collect"}</data>
+<value name="VALUE">
+<shadow type="math_number" id="R/?kb)Yd*FSjOTg3(w+`">
+<field name="NUM">70</field>
+</shadow>
+</value>
+</block>
+</statement>
+<next>
+<block type="comment" id="Jh/;L$n@JuX8AQJDFCul">
+<field name="COMMENT">Put loop blocks here.</field>
+<next>
+<block type="telemetry_update" id="exvivmft-pX$n!1,8Ea$"/>
+</next>
+</block>
+</next>
+</block>
+</next>
+</block>
+</statement>
+</block>
+</next>
+</block>
+</next>
+</block>
+</next>
+</block>
+</statement>
+</block>
+</next>
+</block>
+</next>
+</block>
+</statement>
+</block>
+</xml>
+<?xml version='1.0' encoding='UTF-8' standalone='yes' ?>
+<Extra>
+<OpModeMeta flavor="TELEOP" group="" autoTransition="" />
+<Enabled value="true" />
+</Extra>

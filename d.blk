@@ -1,0 +1,571 @@
+<xml xmlns="https://developers.google.com/blockly/xml">
+<variables>
+<variable id="ZHu7]h(iKQ-7Q9eq/q3X">i</variable>
+<variable id="C-j=_t;@/fsV)+=e~^La">recognitions</variable>
+<variable id="^^$}zQ.#RRVEVQRZfB1I">recognition (Parking from Signal)</variable>
+<variable id="A7n%5a@8jC6}[rgS1GS8">index</variable>
+<variable id="vP~n9zf$lW%hYD/C.j_-">recognition</variable>
+</variables>
+<block type="procedures_defreturn" id="M3O:m%:hZBMA*a{@AuW*" x="285" y="-196">
+<field name="NAME">Parking Position from Signal</field>
+<comment pinned="false" h="80" w="160">Describe this function...</comment>
+<statement name="STACK">
+<block type="variables_set" id="ztdD,%=28!lxFQ$xN;`E">
+<field name="VAR" id="C-j=_t;@/fsV)+=e~^La">recognitions</field>
+<comment pinned="false" h="66" w="177">Get a list of recognitions from TFOD.</comment>
+<value name="VALUE">
+<block type="tfod_getRecognitions" id="Kc`O_fJbn0[`S)+-iuiP"/>
+</value>
+<next>
+<block type="controls_forEach" id="E%3_N/VHHLmYA?,f@jC7">
+<field name="VAR" id="^^$}zQ.#RRVEVQRZfB1I">recognition (Parking from Signal)</field>
+<comment pinned="false" h="81" w="199">Iterate through list and call a function to display info for each recognized object.</comment>
+<value name="LIST">
+<block type="variables_get" id="z}tT%!ql4}X^@ZuA+A6{">
+<field name="VAR" id="C-j=_t;@/fsV)+=e~^La">recognitions</field>
+</block>
+</value>
+<statement name="DO">
+<block type="procedures_ifreturn" id="vz,!Iaj{@-#OB;FDK9ap">
+<mutation value="1"/>
+<value name="CONDITION">
+<block type="logic_compare" id="!H1qoVN7f#`5NP,%8CZa">
+<field name="OP">EQ</field>
+<value name="A">
+<block type="tfodRecognition_getProperty_String" id="}+Vz;1yoQXK,|%{9US5F">
+<field name="PROP">Label</field>
+<value name="TFOD_RECOGNITION">
+<block type="variables_get" id="~K]^wzQZkm2T0Kcno7j_">
+<field name="VAR" id="^^$}zQ.#RRVEVQRZfB1I">recognition (Parking from Signal)</field>
+</block>
+</value>
+</block>
+</value>
+<value name="B">
+<block type="tfod_typedEnum_label" id="G~f*KJIE=m|Q9,ACe%7[">
+<field name="LABEL">1 Bolt</field>
+</block>
+</value>
+</block>
+</value>
+<value name="VALUE">
+<block type="text" id="to`.2r(u;Jo:YeBlvYU_">
+<field name="TEXT">1</field>
+</block>
+</value>
+<next>
+<block type="procedures_ifreturn" id="TFSa,=|9J$!}AC5oSQ:X">
+<mutation value="1"/>
+<value name="CONDITION">
+<block type="logic_compare" id="zp|l1Tl`uF3,)/?KoVgS">
+<field name="OP">EQ</field>
+<value name="A">
+<block type="tfodRecognition_getProperty_String" id="$EmRb:M,NJ`17T)!@yjc">
+<field name="PROP">Label</field>
+<value name="TFOD_RECOGNITION">
+<block type="variables_get" id="[S9|~(?3zek_N*p$L0OK">
+<field name="VAR" id="^^$}zQ.#RRVEVQRZfB1I">recognition (Parking from Signal)</field>
+</block>
+</value>
+</block>
+</value>
+<value name="B">
+<block type="tfod_typedEnum_label" id="J[){tYGb1ngH04i_iv;,">
+<field name="LABEL">2 Bulb</field>
+</block>
+</value>
+</block>
+</value>
+<value name="VALUE">
+<block type="text" id="okCv2eyH!cfMq7yUc5K:">
+<field name="TEXT">2</field>
+</block>
+</value>
+<next>
+<block type="procedures_ifreturn" id=")-gim6#V%7fcE11tf,q@">
+<mutation value="1"/>
+<value name="CONDITION">
+<block type="logic_compare" id="eWT.9_xE*Vyc.xm1a:PG">
+<field name="OP">EQ</field>
+<value name="A">
+<block type="tfodRecognition_getProperty_String" id=";yancS4#|Di)$$!h!yko">
+<field name="PROP">Label</field>
+<value name="TFOD_RECOGNITION">
+<block type="variables_get" id="B1t6M,TIjphCde{[FF+Q">
+<field name="VAR" id="^^$}zQ.#RRVEVQRZfB1I">recognition (Parking from Signal)</field>
+</block>
+</value>
+</block>
+</value>
+<value name="B">
+<block type="tfod_typedEnum_label" id="R0^BO#Y7ja*1(|4QToXY">
+<field name="LABEL">3 Panel</field>
+</block>
+</value>
+</block>
+</value>
+<value name="VALUE">
+<block type="text" id="m$?#+7nv)M)crUVJFsL6">
+<field name="TEXT">3</field>
+</block>
+</value>
+</block>
+</next>
+</block>
+</next>
+</block>
+</statement>
+</block>
+</next>
+</block>
+</statement>
+<value name="RETURN">
+<block type="text" id="Yk13gfrA3l-K_G~gCY(_">
+<field name="TEXT">NO THING</field>
+</block>
+</value>
+</block>
+<block type="procedures_defnoreturn" id="bIokQHJVLn-]H)ozScJ6" x="-573" y="-99">
+<field name="NAME">Update Telemetry</field>
+<comment pinned="false" h="80" w="160">Describe this function...</comment>
+<statement name="STACK">
+<block type="procedures_callnoreturn" id="C=:=7_a}%nRm$1}sWR1e">
+<mutation name="Display Recognitions"/>
+<next>
+<block type="telemetry_addTextData_All" id="`+[q}=XtUfKE)p_2~+]#">
+<value name="KEY">
+<shadow type="text" id="L3!j8^JS?5)sk:0d[G5)">
+<field name="TEXT">Parking Position</field>
+</shadow>
+</value>
+<value name="TEXT">
+<shadow type="text" id="oa3}/T:)_?HUsYi0{(3)">
+<field name="TEXT">text</field>
+</shadow>
+<block type="procedures_callreturn" id="e5v~zvB=rj7K{gQ]=~W:">
+<mutation name="Parking Position from Signal"/>
+</block>
+</value>
+<next>
+<block type="telemetry_update" id="exvivmft-pX$n!1,8Ea$"/>
+</next>
+</block>
+</next>
+</block>
+</statement>
+</block>
+<block type="procedures_defnoreturn" id="WtpyD@tEu+EoY=P9iY,D" deletable="false" x="24" y="8">
+<field name="NAME">runOpMode</field>
+<comment pinned="false" h="45" w="532">This function is executed when this Op Mode is selected from the Driver Station.</comment>
+<statement name="STACK">
+<block type="procedures_callnoreturn" id="#,ycP:74p]vtFbR06I=(">
+<mutation name="Initialize"/>
+<next>
+<block type="linearOpMode_waitForStart" id=":`$wN_ci`O;o6P0~.(+g">
+<next>
+<block type="controls_if" id="}Q?5mbxSO8Di;i!__6[y">
+<value name="IF0">
+<block type="linearOpMode_opModeIsActive" id=")o%YFX/#9kvv^sgXr4~5"/>
+</value>
+<statement name="DO0">
+<block type="comment" id="(rU-p_T_/B|vExcs}liL">
+<field name="COMMENT">Put run blocks here.</field>
+<next>
+<block type="controls_whileUntil" id="^0Kagy/e+Ea{rbZPv2G6">
+<field name="MODE">WHILE</field>
+<value name="BOOL">
+<block type="linearOpMode_opModeIsActive" id="e)cr{!2VIET83s,JWC.="/>
+</value>
+<statement name="DO">
+<block type="comment" id="Jh/;L$n@JuX8AQJDFCul">
+<field name="COMMENT">Put loop blocks here.</field>
+<next>
+<block type="procedures_callnoreturn" id="2}z(iw%J@{2{B];l6nVV">
+<mutation name="Update Telemetry"/>
+</block>
+</next>
+</block>
+</statement>
+</block>
+</next>
+</block>
+</statement>
+<next>
+<block type="comment" id="x3Da[L*)xMh=3e7zy7*{">
+<field name="COMMENT">Deactivate TFOD.</field>
+<next>
+<block type="tfod_deactivate" id=")#LnjM-c3n?~scY$Z!@Y"/>
+</next>
+</block>
+</next>
+</block>
+</next>
+</block>
+</next>
+</block>
+</statement>
+</block>
+<block type="procedures_defnoreturn" id="5Y6JsJ.F38?%9e}ccZlN" x="-561" y="96">
+<field name="NAME">Display Recognitions</field>
+<comment pinned="false" h="80" w="160">Describe this function...</comment>
+<statement name="STACK">
+<block type="variables_set" id="G3vz:RD7CO6.%Sw)ZFK_">
+<field name="VAR" id="C-j=_t;@/fsV)+=e~^La">recognitions</field>
+<comment pinned="false" h="66" w="177">Get a list of recognitions from TFOD.</comment>
+<value name="VALUE">
+<block type="tfod_getRecognitions" id="%d}Eg`]Tl,|WPcgQ%t)3"/>
+</value>
+<next>
+<block type="controls_if" id="ca@sg0@jzk|H6L@P2e^L">
+<mutation else="1"/>
+<comment pinned="false" h="102" w="202">If list is empty, inform the user. Otherwise, go through list and display info for each recognition.</comment>
+<value name="IF0">
+<block type="logic_compare" id="=%o)vlFkvhu-xL,X/eo$">
+<field name="OP">EQ</field>
+<value name="A">
+<block type="lists_length" id="t!{SnHLGoo~PaP6awyK.">
+<value name="VALUE">
+<block type="variables_get" id="ZNj(tw{-HQNlj-7{iU](">
+<field name="VAR" id="C-j=_t;@/fsV)+=e~^La">recognitions</field>
+</block>
+</value>
+</block>
+</value>
+<value name="B">
+<block type="math_number" id="4XseN,4~X=LIU%~64FvC">
+<field name="NUM">0</field>
+</block>
+</value>
+</block>
+</value>
+<statement name="DO0">
+<block type="telemetry_addTextData_All" id="GlID$m:#pV1$]_9Xwr2R">
+<value name="KEY">
+<shadow type="text" id="M^km_K-P,B!{$$O:vELn">
+<field name="TEXT">TFOD</field>
+</shadow>
+</value>
+<value name="TEXT">
+<shadow type="text" id="p48vyO#GC!;Z;9]M-St7">
+<field name="TEXT">No items detected.</field>
+</shadow>
+</value>
+</block>
+</statement>
+<statement name="ELSE">
+<block type="variables_set" id="-$r0NK]~Nh7SKIq7SfSd">
+<field name="VAR" id="A7n%5a@8jC6}[rgS1GS8">index</field>
+<value name="VALUE">
+<block type="math_number" id="P1f]4HSIe|E0?Cj7x0B[">
+<field name="NUM">0</field>
+</block>
+</value>
+<next>
+<block type="controls_forEach" id="|@Y$y8D~],V(MRQ+Cyv{">
+<field name="VAR" id="vP~n9zf$lW%hYD/C.j_-">recognition</field>
+<comment pinned="false" h="81" w="199">Iterate through list and call a function to display info for each recognized object.</comment>
+<value name="LIST">
+<block type="variables_get" id="W,d1s!eFWeDT0X}~eq,n">
+<field name="VAR" id="C-j=_t;@/fsV)+=e~^La">recognitions</field>
+</block>
+</value>
+<statement name="DO">
+<block type="comment" id="U@Dkpel-LMa.00jJsqA-">
+<field name="COMMENT">Display info.</field>
+<next>
+<block type="procedures_callnoreturn" id="}Ed*Qv]2hqyM9x`y/=fq">
+<mutation name="displayInfo">
+<arg name="i"/>
+</mutation>
+<value name="ARG0">
+<block type="variables_get" id="1ynw+j_dMgW{E_t3}D|E">
+<field name="VAR" id="A7n%5a@8jC6}[rgS1GS8">index</field>
+</block>
+</value>
+<next>
+<block type="comment" id=",1(:%n^0JKFq_SFwTg^H">
+<field name="COMMENT">Increment index.</field>
+<next>
+<block type="variables_set" id="}(~W?+spH%5lnSN8((?=">
+<field name="VAR" id="A7n%5a@8jC6}[rgS1GS8">index</field>
+<value name="VALUE">
+<block type="math_arithmetic" id="?6nQyMGz}aU1fC+utj9g">
+<field name="OP">ADD</field>
+<value name="A">
+<shadow type="math_number" id="A(cWTP6GX-7F%pan2;S:">
+<field name="NUM">1</field>
+</shadow>
+<block type="variables_get" id="_Qa|p#!QpQ?:hR:4$)Ki">
+<field name="VAR" id="A7n%5a@8jC6}[rgS1GS8">index</field>
+</block>
+</value>
+<value name="B">
+<shadow type="math_number" id="cZn5/PfoHlpMu|xN+~eL">
+<field name="NUM">1</field>
+</shadow>
+</value>
+</block>
+</value>
+</block>
+</next>
+</block>
+</next>
+</block>
+</next>
+</block>
+</statement>
+</block>
+</next>
+</block>
+</statement>
+</block>
+</next>
+</block>
+</statement>
+</block>
+<block type="procedures_defnoreturn" id="*F(sMxP*oQScXzi;F261" x="1214" y="26">
+<field name="NAME">Initialize</field>
+<comment pinned="false" h="80" w="160">Describe this function...</comment>
+<statement name="STACK">
+<block type="comment" id="Lc#BFtj*NTB48YL;eBl.">
+<field name="COMMENT">Sample TFOD Op Mode</field>
+<next>
+<block type="comment" id="#ul#WaXLbg~hUii+7AB_">
+<field name="COMMENT">Initialize Vuforia.</field>
+<next>
+<block type="comment" id="iEid;.{ghFI`0QF/I/Gz">
+<field name="COMMENT">This sample assumes phone is in landscape mode.</field>
+<next>
+<block type="comment" id="t1$uJER0JJ.uJ38KBL|l">
+<field name="COMMENT">Rotate phone -90 so back camera faces "forward" direction on robot.</field>
+<next>
+<block type="vuforiaCurrentGame_initialize_withCameraDirection_2" id="*bDjN}?DUEyaUD-_?hPl">
+<value name="CAMERA_DIRECTION">
+<shadow type="navigation_typedEnum_cameraDirection" id="zRgKV_xJi/PG^@cD`[@~">
+<field name="CAMERA_DIRECTION">BACK</field>
+</shadow>
+</value>
+<value name="USE_EXTENDED_TRACKING">
+<shadow type="logic_boolean" id="^p$hpyqeY{ZDYQh?$1`p">
+<field name="BOOL">TRUE</field>
+</shadow>
+</value>
+<value name="ENABLE_CAMERA_MONITORING">
+<shadow type="logic_boolean" id="HygiD?;rw#B6bFp`eLak">
+<field name="BOOL">TRUE</field>
+</shadow>
+</value>
+<value name="CAMERA_MONITOR_FEEDBACK">
+<shadow type="navigation_typedEnum_cameraMonitorFeedback" id="kj3)r02x8HJw5N{uq+IH">
+<field name="CAMERA_MONITOR_FEEDBACK">AXES</field>
+</shadow>
+</value>
+<value name="DX">
+<shadow type="math_number" id="iD!2AO7+^t;^/rgoiqH5">
+<field name="NUM">0</field>
+</shadow>
+</value>
+<value name="DY">
+<shadow type="math_number" id="@$OFT@!3:8Nx)qHV}jN?">
+<field name="NUM">0</field>
+</shadow>
+</value>
+<value name="DZ">
+<shadow type="math_number" id="6gY9UAP_k801~Q!Zkb]{">
+<field name="NUM">0</field>
+</shadow>
+</value>
+<value name="AXES_ORDER">
+<shadow type="navigation_typedEnum_axesOrder" id="!(F|-DF0=?(lRYv$G~Zf">
+<field name="AXES_ORDER">XYZ</field>
+</shadow>
+</value>
+<value name="FIRST_ANGLE">
+<shadow type="math_number" id="m*t0#.@cTRM+7z_f7,/z">
+<field name="NUM">0</field>
+</shadow>
+</value>
+<value name="SECOND_ANGLE">
+<shadow type="math_number" id="hK8^0haZ~~_E4B;`4na)">
+<field name="NUM">-90</field>
+</shadow>
+</value>
+<value name="THIRD_ANGLE">
+<shadow type="math_number" id="E41=/U-H6A+|jop`_wYx">
+<field name="NUM">0</field>
+</shadow>
+</value>
+<value name="USE_COMPETITION_FIELD_TARGET_LOCATIONS">
+<shadow type="logic_boolean" id="agL:#]BWII*-OaGin_`]">
+<field name="BOOL">TRUE</field>
+</shadow>
+</value>
+<next>
+<block type="tfod_useDefaultModel" id="fBI.C40R*SuZUaMZ%iW6">
+<next>
+<block type="tfod_initialize" id="Ze@Bp(/PZ$BSt|OY%NR;">
+<value name="MINIMUM_CONFIDENCE">
+<shadow type="math_number" id="`n3,=5?xXozLn|m^Ddep">
+<field name="NUM">0.7</field>
+</shadow>
+</value>
+<value name="USE_OBJECT_TRACKER">
+<shadow type="logic_boolean" id="9V};j3DdxD^(yBc7gNAK">
+<field name="BOOL">FALSE</field>
+</shadow>
+</value>
+<value name="ENABLE_CAMERA_MONITORING">
+<shadow type="logic_boolean" id="yW-PiG7hbKT6[@QVMNQ?">
+<field name="BOOL">TRUE</field>
+</shadow>
+</value>
+<next>
+<block type="comment" id="6]yP0{L.V#v3^DJf|2r=">
+<field name="COMMENT">Initialize TFOD before waitForStart.</field>
+<next>
+<block type="tfod_activate" id="/B7!WNQ].FmwKj=}jsb|">
+<comment pinned="false" h="96" w="251">Activate TFOD here so the object detection labels are visible in the Camera Stream preview window on the Driver Station.</comment>
+<next>
+<block type="comment" id="?ryUWB49!GNw,hl6=SGT">
+<field name="COMMENT">Enable following block to zoom in on target.</field>
+<next>
+<block type="tfod_setZoom" id="wc!x$n$!eF21(Z6Cu:iN">
+<value name="MAGNIFICATION">
+<shadow type="math_number" id="1KoG{M+xaV:C|)KGJ!_]">
+<field name="NUM">1.75</field>
+</shadow>
+</value>
+<value name="ASPECT_RATIO">
+<block type="math_arithmetic" id="0vAVAm!,?m*$}9IoLZ%-">
+<field name="OP">DIVIDE</field>
+<value name="A">
+<shadow type="math_number" id="IDh%CG{YAl#~F;d6CgD?">
+<field name="NUM">16</field>
+</shadow>
+</value>
+<value name="B">
+<shadow type="math_number" id="zWFio}4;50N@]ZqY^_qC">
+<field name="NUM">9</field>
+</shadow>
+</value>
+</block>
+</value>
+<next>
+<block type="telemetry_addTextData_All" id="Y/b(p3p_Ls7l_.)bQt%8">
+<value name="KEY">
+<shadow type="text" id="]K/@Q[7z:EBSoy.ggFCo">
+<field name="TEXT">DS preview on/off</field>
+</shadow>
+</value>
+<value name="TEXT">
+<shadow type="text" id="eV-62@bA|1V9{)n7lim2">
+<field name="TEXT">3 dots, Camera Stream</field>
+</shadow>
+</value>
+<next>
+<block type="telemetry_addTextData_All" id="/Zm[n8^)(`(S}Ab9j!;|">
+<value name="KEY">
+<shadow type="text" id="E)4aB(Zb2,Da/0v0AiN=">
+<field name="TEXT">&gt;</field>
+</shadow>
+</value>
+<value name="TEXT">
+<shadow type="text" id="^u5_oh+s(.Vs1Kk;$yw9">
+<field name="TEXT">Press Play to start</field>
+</shadow>
+</value>
+<next>
+<block type="telemetry_update" id="CcM7+$syN,5p}u1NCi8q">
+<next>
+<block type="comment" id="ucY]w(tl5$!{2RX}=X;C">
+<field name="COMMENT">Wait for start command from Driver Station.</field>
+</block>
+</next>
+</block>
+</next>
+</block>
+</next>
+</block>
+</next>
+</block>
+</next>
+</block>
+</next>
+</block>
+</next>
+</block>
+</next>
+</block>
+</next>
+</block>
+</next>
+</block>
+</next>
+</block>
+</next>
+</block>
+</next>
+</block>
+</next>
+</block>
+</statement>
+</block>
+<block type="procedures_defnoreturn" id=")21zCFQOO-Q6a!/Wu4LO" x="26" y="414">
+<mutation>
+<arg name="i" varid="ZHu7]h(iKQ-7Q9eq/q3X"/>
+</mutation>
+<field name="NAME">displayInfo</field>
+<comment pinned="false" h="80" w="160">Display info (using telemetry) for a recognized object.</comment>
+<statement name="STACK">
+<block type="comment" id="tlc0F80BdB`b([Xp;XEc">
+<field name="COMMENT">Display label info.</field>
+<next>
+<block type="telemetry_addTextData_All" id=";6SFb8haRI5qo45n}iJ8">
+<comment pinned="false" h="80" w="160">Display the label and index number for the recognition.</comment>
+<value name="KEY">
+<shadow type="text" id="_dKJensTqN?qDeXC6vm|">
+<field name="TEXT">key</field>
+</shadow>
+<block type="text_join" id="_f._U;/kb2{Yz0e76KNN">
+<mutation items="2"/>
+<value name="ADD0">
+<block type="text" id="y,9e7qml,YyEJ*rPPJ%p">
+<field name="TEXT">label </field>
+</block>
+</value>
+<value name="ADD1">
+<block type="variables_get" id="PCpqfPlom*4,p~ehCda9">
+<field name="VAR" id="ZHu7]h(iKQ-7Q9eq/q3X">i</field>
+</block>
+</value>
+</block>
+</value>
+<value name="TEXT">
+<shadow type="text" id="#+^2[kj(=_-pPWHzSDN^">
+<field name="TEXT">text</field>
+</shadow>
+<block type="tfodRecognition_getProperty_String" id="d7@$bcm+3wluc1@Wtq|u">
+<field name="PROP">Label</field>
+<value name="TFOD_RECOGNITION">
+<block type="variables_get" id="}u)$1QfMPe1)p,Qs5Ku;">
+<field name="VAR" id="vP~n9zf$lW%hYD/C.j_-">recognition</field>
+</block>
+</value>
+</block>
+</value>
+<next>
+<block type="comment" id="_98!oDhsOCBdhLYUP4uf">
+<field name="COMMENT">Display upper corner info.</field>
+</block>
+</next>
+</block>
+</next>
+</block>
+</statement>
+</block>
+</xml>
+<?xml version='1.0' encoding='UTF-8' standalone='yes' ?>
+<Extra>
+<OpModeMeta flavor="TELEOP" group="" autoTransition="" />
+<Enabled value="true" />
+</Extra>
