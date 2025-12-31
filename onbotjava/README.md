@@ -1,10 +1,20 @@
-# OnBot Java
+# FTC 18650 - OnBot Java
 
-OnBot Java source files exported from the Control Hub.
+This folder contains OnBot Java files exported from the Control Hub.
+
+## Programs
+
+*No programs yet.*
+
+## Workflow
+
+1. Export your Java programs from the Control Hub after each meeting
+2. Commit with a descriptive message
+3. Push to share with the team
 
 ## Usage
 
-To use these files:
+To import a program:
 
 1. Connect to the Control Hub
 2. Open the OnBot Java editor in a web browser
@@ -16,6 +26,3 @@ To export changes:
 2. Save to this directory with a `.java` extension
 3. Commit and push
 
-## Notes
-
-OnBot Java provides more flexibility than Blocks programming, including custom classes, complex logic, and access to the full FTC SDK API.

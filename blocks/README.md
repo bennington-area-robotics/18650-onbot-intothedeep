@@ -1,8 +1,8 @@
-# Blocks Programs
+# FTC 18650 - Blocks Programs
 
-FTC Blocks programs exported from the Control Hub.
+This folder contains Blocks program exports (`.blk` files) from the Control Hub.
 
-## Active Programs
+## Programs
 
 | File | Description |
 |------|-------------|
@@ -20,9 +20,15 @@ FTC Blocks programs exported from the Control Hub.
 
 The `archive/` folder contains older or experimental programs that are no longer in active use.
 
+## Workflow
+
+1. Export your Blocks programs from the Control Hub after each meeting
+2. Commit with a descriptive message
+3. Push to share with the team
+
 ## Usage
 
-To use these programs:
+To import a program:
 
 1. Connect to the Control Hub
 2. Open the Blocks editor in a web browser
