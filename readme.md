@@ -1,1 +1,0 @@
-Block programs from the 2024-2025 season of FTC Robotics.
